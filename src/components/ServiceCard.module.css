@@ -1,0 +1,166 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  min-height: 280px;
+  isolation: isolate;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 1s var(--ease), filter 0.6s var(--ease);
+  filter: grayscale(0.25) contrast(1.05);
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+  filter: grayscale(0) contrast(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 9, 11, 0) 30%, rgba(8, 9, 11, 0.92) 100%),
+    linear-gradient(0deg, rgba(8, 9, 11, 0.15), rgba(8, 9, 11, 0.15));
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: clamp(20px, 2.4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: var(--yellow);
+  color: #0a0a0a;
+  transition: transform 0.4s var(--ease);
+}
+
+.card:hover .icon {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.title {
+  font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+}
+
+.description {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+/* Bento sizing (wide screens only, set up by the parent grid) */
+@media (min-width: 640px) {
+  .wide {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .large .title {
+    font-size: 3rem;
+  }
+
+  .tall {
+    grid-row: span 2;
+  }
+}
+
+.tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: linear-gradient(160deg, var(--card-2), var(--card));
+  transition:
+    border-color 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.tile:hover {
+  border-color: rgba(255, 214, 41, 0.45);
+  transform: translateY(-3px);
+}
+
+.tileIcon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--yellow-soft);
+  color: var(--yellow);
+}
+
+.tileTitle {
+  font-size: 1.45rem;
+  margin-bottom: 4px;
+}
+
+.tileText {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 639px) {
+  .card {
+    min-height: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .tile {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .tileIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .tileTitle {
+    font-size: 1.2rem;
+    line-height: 1.05;
+  }
+
+  .tileText {
+    font-size: 0.8rem;
+  }
+}

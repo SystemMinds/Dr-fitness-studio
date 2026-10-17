@@ -1,0 +1,120 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(26px, 3vw, 36px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: linear-gradient(170deg, var(--card-2) 0%, var(--card) 60%);
+  transition:
+    border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+.card:hover {
+  border-color: rgba(255, 214, 41, 0.4);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+}
+
+.featured {
+  border-color: rgba(255, 214, 41, 0.65);
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(255, 214, 41, 0.14), transparent 60%),
+    linear-gradient(170deg, var(--card-2) 0%, var(--card) 60%);
+}
+
+.badge {
+  position: absolute;
+  top: -13px;
+  left: clamp(26px, 3vw, 36px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: #0a0a0a;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header {
+  margin-bottom: 22px;
+}
+
+.category {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.label {
+  font-size: 2.4rem;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 4rem);
+  line-height: 1;
+  color: var(--yellow);
+}
+
+.period {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.perMonth {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.features {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.check {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--yellow-soft);
+  color: var(--yellow);
+}
+
+.note {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.cta {
+  margin-top: auto;
+  padding-top: 30px;
+}

@@ -1,0 +1,121 @@
+.footer {
+  position: relative;
+  padding-top: clamp(64px, 8vw, 96px);
+  background: #050607;
+  border-top: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  gap: 36px 24px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.brand {
+  grid-column: 1 / -1;
+}
+
+.grid > :last-child {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  }
+
+  .brand,
+  .grid > :last-child {
+    grid-column: auto;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+}
+
+/* Centre the logo over the brand text block beneath it */
+.logo {
+  align-self: center;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--yellow);
+  letter-spacing: 0.04em;
+}
+
+.about {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.heading {
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.list a,
+.contact a {
+  color: var(--muted);
+  font-size: 0.94rem;
+  transition: color 0.25s var(--ease);
+}
+
+.list a:hover,
+.contact a:hover {
+  color: var(--yellow);
+}
+
+.contact {
+  display: grid;
+  gap: 14px;
+}
+
+.contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: clamp(48px, 6vw, 72px);
+  padding-block: 24px 32px;
+  border-top: 1px solid var(--border);
+  color: #8a8f99;
+  font-size: 0.84rem;
+}
+
+/* Room for the mobile quick-action bar */
+@media (max-width: 899px) {
+  .bottom {
+    padding-bottom: 104px;
+  }
+}
+
+.credit {
+  color: #8a8f99;
+}
+
+.rating {
+  align-self: flex-start;
+}

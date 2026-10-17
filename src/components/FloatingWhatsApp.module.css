@@ -1,0 +1,27 @@
+.fab {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow:
+    0 12px 30px -8px rgba(37, 211, 102, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 899px) {
+  .fab {
+    display: none;
+  }
+}
+
+body:global(.menu-open) .fab {
+  display: none;
+}

@@ -1,0 +1,54 @@
+.wrap {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding-block: 16px;
+  margin-block: -28px;
+}
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  padding-block: 18px;
+  background: var(--yellow);
+  color: #0a0a0a;
+  transform: rotate(-1.2deg) scale(1.02);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 38s linear infinite;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+.track li {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.star {
+  font-size: 0.7em;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

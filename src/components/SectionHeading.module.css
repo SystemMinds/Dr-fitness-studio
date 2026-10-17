@@ -1,0 +1,45 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-bottom: clamp(30px, 6vw, 64px);
+}
+
+.center {
+  margin-inline: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+.line {
+  width: 32px;
+  height: 2px;
+  background: var(--yellow);
+}
+
+.titleMask {
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.title {
+  font-size: clamp(2.35rem, 8.5vw, 4.75rem);
+}
+
+.description {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+}
