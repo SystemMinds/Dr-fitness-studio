@@ -4,6 +4,8 @@
  * does not depict the Dr. Fitness premises. Replace with real gym photos
  * by dropping files with the same names into public/images/.
  */
+import { asset } from '../utils/asset';
+
 export interface SiteImage {
   src: string;
   width: number;
@@ -12,7 +14,7 @@ export interface SiteImage {
 }
 
 const img = (file: string, width: number, height: number, alt: string): SiteImage => ({
-  src: `/images/${file}`,
+  src: asset(`images/${file}`),
   width,
   height,
   alt,

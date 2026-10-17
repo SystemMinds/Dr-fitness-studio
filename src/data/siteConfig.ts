@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset';
+
 /**
  * Central business information for Dr. Fitness.
  * Source of truth: the printed Dr. Fitness brochure.
@@ -8,7 +10,7 @@ export const siteConfig = {
   tagline: 'Break Barrier, Build Strength',
   /** Official logo (transparent PNG supplied by Dr. Fitness, used unmodified). */
   // `?v=` busts browser caches when the file changes (v2: C2PA metadata removed).
-  logo: { src: '/images/logo.png?v=2', width: 1254, height: 1254 },
+  logo: { src: asset('images/logo.png?v=2'), width: 1254, height: 1254 },
 
   phone: {
     display: '+91 76767 87977',
